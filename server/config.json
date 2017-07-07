@@ -1,0 +1,14 @@
+{
+  "dbConfig" : {
+    "dbName" : "DesafioPokemon",
+    "username" : "DesafioAdmin",
+    "password" : "Picachu123",
+    "options" : {
+      "host" : "desafio-jz.database.windows.net",
+      "dialect": "mssql",
+      "dialectOptions" : {
+        "encrypt": true
+      }
+    }
+  }
+}
