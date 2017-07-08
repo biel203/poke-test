@@ -16,7 +16,9 @@ app.use('/lib', express.static(path.resolve(__dirname, 'node_modules')));
 app.use('/public', express.static(path.resolve(__dirname, 'public')));
 app.use('/', express.static(path.resolve(__dirname, 'client')));
 app.use('/server', express.static(path.resolve(__dirname, 'server')));
-//app.set('view engine', 'jade');
+app.get('/settings', function (req, res) {
+    res.json(process.env)
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -68,6 +70,7 @@ function onError(error) {
  */
 
 function onListening() {
+    process.env
     var addr = server.address();
     console.log('Listening on ' + addr.port);
     daoConnection();
