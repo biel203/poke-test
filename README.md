@@ -6,8 +6,9 @@ acessar as URLs citadas aqui.
 
 Para acessar a documentação acesse : [HOST]/doc
 
+Exemplo:
 ```
-Exemplo: www.hostdaapi.com.br/doc
+www.hostdaapi.com.br/doc
 ```
 
 ## Começando
@@ -16,7 +17,7 @@ Para rodar a API localmente será necessário executar o comando <code>npm insta
 todos os módulos necessários, configure o arquivo config.json com os parâmetros necessários para a
 conexão com o banco de dados.
 
-<code>
+```
 {
   "host" : {
     "url" : "URL" // Caso rode a API localmente poderá colocar o endereço local "http://localhost:3000/"
@@ -35,7 +36,7 @@ conexão com o banco de dados.
     }
   }
 }
-</code>
+```
 
 OBS: A configuração do banco acima é de acordo com a necessidade do framework sequelizejs.
 
@@ -59,42 +60,37 @@ Após isso, rode a aplicação com o comando <code>node app.js</code>.
 ```
 
 Parâmetros :
-<code>
+```
     data : {
         trainer : 'NONE_DO_TREINADOR',
         type : 'NOME_DO_POKEMON' // Nomes válidos : 'MEWTWO', 'PIKACHU', 'CHARIZARD'
     }
 
-</code>
-
-### Atualizar pokémon
 ```
+
+Atualizar pokémon
 [HOST]/api/pokemon/update/
 ```
-<code>
     data : {
         id : 'ID_DO_REGISTRO',
         parameter : {
             treinador : "NOME_ATUALIZADO"
         }
     }
-</code>
-
-### Deletar Pokemon
 ```
+
+Deletar Pokemon
 [HOST]/api/pokemon/delete/
 ```
-
 <code>
     data : {
         id : 'ID_DO_REGISTRO'
     }
 </code>
+```
 
-### Batalha Pokémon
-```
+Batalha Pokémon
 [HOST]/api/pokemon/battle/:idA/:idB
-```
 
 ### Prérequisitos
 
