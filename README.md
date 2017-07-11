@@ -44,17 +44,17 @@ Após isso, rode a aplicação com o comando <code>node app.js</code>.
 
 ## URLs para acesso REST
 
-### Listar todos os pokémon.
+Listar todos os pokémon
 ```
 [HOST]/api/pokemon/
 ```
 
-### Carregar Pokémon específico.
+Carregar Pokémon específico
 ```
 [HOST]/api/pokemon/:id
 ```
 
-### Registrar novo pokemon.
+Registrar novo pokemon
 ```
 [HOST]/api/pokemon/create/
 ```
@@ -69,8 +69,9 @@ Parâmetros :
 ```
 
 Atualizar pokémon
-[HOST]/api/pokemon/update/
 ```
+[HOST]/api/pokemon/update/
+
     data : {
         id : 'ID_DO_REGISTRO',
         parameter : {
@@ -80,17 +81,21 @@ Atualizar pokémon
 ```
 
 Deletar Pokemon
+```
 [HOST]/api/pokemon/delete/
 ```
-<code>
+Parâmetros :
+```
     data : {
         id : 'ID_DO_REGISTRO'
     }
-</code>
 ```
 
+
 Batalha Pokémon
+```
 [HOST]/api/pokemon/battle/:idA/:idB
+```
 
 ### Prérequisitos
 
