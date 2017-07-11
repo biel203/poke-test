@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "heroku-postbuild": "grunt"
+    "postinstall": "grunt"
   },
   "dependencies": {
     "angular": "^1.6.4",
