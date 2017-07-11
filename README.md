@@ -98,7 +98,8 @@ Batalha Pokémon
 
 Para rodar essa API será obrigatório ter instalado em seu sistema a plataforma Node.js.
 
-## Rodando os testes.
+## Rodando os testes
 
 Para rodar os testes, execute o comando <code>mocha</code>.
-Caso não exista o comando "mocha" instale o módulo mocha globalmente com o comando <code>npm install mocha -g</code>
+
+Caso não exista o comando instale o módulo globalmente com o comando <code>npm install mocha -g</code>

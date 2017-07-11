@@ -6,7 +6,7 @@
 /**
  * Estabelece a conexão com o banco de dados usando os parâmetros especificados em conf.json,.
  */
-var connection = function  () {
+var connection = function  (dbName, username, password, options) {
     var model,
         config,
         schemaDir;
@@ -19,10 +19,10 @@ var connection = function  () {
 
         // Configuração de conexão pelo helper singleton;
         model.setup(schemaDir,
-            config.dbConfig.dbName,
-            config.dbConfig.username,
-            config.dbConfig.password,
-            config.dbConfig.options);
+            dbName || config.dbConfig.dbName,
+            username || config.dbConfig.username,
+            password || config.dbConfig.password,
+            options || config.dbConfig.options );
 
     } catch (err){
         console.error(err);
