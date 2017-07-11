@@ -1,3 +1,8 @@
+/**
+ * Módulo de configurações de rotas para comunicação via RESTFull
+ * @module router
+ */
+
 var express = require('express');
 var router = express.Router();
 
@@ -38,6 +43,5 @@ var PokemonBattle = require('./command/pokemon/battle');
 var pokemonBattle = new PokemonBattle();
 
 router.post('/api/pokemon/battle/:idA/:idB', pokemonBattle.start);
-
 
 module.exports = router;

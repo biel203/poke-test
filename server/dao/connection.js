@@ -1,3 +1,11 @@
+/**
+ * Módulo de conexão com a base de dados.
+ * @module connection
+ */
+
+/**
+ * Estabelece a conexão com o banco de dados usando os parâmetros especificados em conf.json,.
+ */
 var connection = function  () {
     var model,
         config,
