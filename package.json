@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "postinstall": "grunt"
+    "start": "node app.js && grunt"
   },
   "dependencies": {
     "angular": "^1.6.4",
