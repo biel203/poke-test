@@ -58,8 +58,6 @@ Registrar novo pokemon
 ```
 [HOST]/api/pokemon/create/
 ```
-
-Parâmetros :
 ```
     data : {
         trainer : 'NONE_DO_TREINADOR',
@@ -84,7 +82,6 @@ Deletar Pokemon
 ```
 [HOST]/api/pokemon/delete/
 ```
-Parâmetros :
 ```
     data : {
         id : 'ID_DO_REGISTRO'
