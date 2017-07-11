@@ -16,7 +16,6 @@ Para rodar a API localmente será necessário executar o comando <code>npm insta
 todos os módulos necessários, configure o arquivo config.json com os parâmetros necessários para a
 conexão com o banco de dados.
 
-```
 <code>
 {
   "host" : {
@@ -37,22 +36,27 @@ conexão com o banco de dados.
   }
 }
 </code>
-```
 
 OBS: A configuração do banco acima é de acordo com a necessidade do framework sequelizejs.
 
 Após isso, rode a aplicação com o comando <code>node app.js</code>.
 
-### URLs para acesso REST
-```
+## URLs para acesso REST
+
 ### Listar todos os pokémon.
+```
 [HOST]/api/pokemon/
+```
 
 ### Carregar Pokémon específico.
+```
 [HOST]/api/pokemon/:id
+```
 
 ### Registrar novo pokemon.
+```
 [HOST]/api/pokemon/create/
+```
 
 Parâmetros :
 <code>
@@ -64,8 +68,9 @@ Parâmetros :
 </code>
 
 ### Atualizar pokémon
+```
 [HOST]/api/pokemon/update/
-
+```
 <code>
     data : {
         id : 'ID_DO_REGISTRO',
@@ -76,7 +81,9 @@ Parâmetros :
 </code>
 
 ### Deletar Pokemon
+```
 [HOST]/api/pokemon/delete/
+```
 
 <code>
     data : {
@@ -85,6 +92,7 @@ Parâmetros :
 </code>
 
 ### Batalha Pokémon
+```
 [HOST]/api/pokemon/battle/:idA/:idB
 ```
 
