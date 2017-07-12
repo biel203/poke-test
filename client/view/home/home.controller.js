@@ -89,6 +89,7 @@ app.controller('home.controller', function ($scope, $rootScope) {
         function onGetPokemon(result) {
             $scope.$apply(function () {
                 $scope.battleStatus = result;
+                getPokemonList();
             })
         }
     };
