@@ -34,7 +34,9 @@ class PokemonBattleCommand {
 
             promise = PokemonModel.findAll(
                 {
-                    id : [req.params.idA, req.params.idB]
+                    where : {
+                        id : [req.params.idA, req.params.idB]
+                    }
                 }
             );
             promise.then(onFindAll.bind(this), onError);
