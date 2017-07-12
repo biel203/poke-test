@@ -1,7 +1,172 @@
 <section>
-    <img ng-mouseenter="signinLinkedIn = true"
-         ng-mouseleave="signinLinkedIn = false"
-         ng-click="onLoginLinkedIn()"
-         ng-model="signinLinkedIn" ng-src="{{!signinLinkedIn && '/public/images/Retina/Sign-In-Small---Default.png' || '/public/images/Retina/Sign-In-Small---Hover.png'}}"
-         alt="">
+    <div class="row">
+        <div class="col-sm-7">
+            <!-- Category -->
+            <div class="single category">
+                <h3 class="side-title">Treinadores cadastrados <button ng-click="registry = true" type="button" class="btn btn-success pull-right">Adicionar</button></h3>
+                <ul class="list-group">
+                    <li ng-show="!pokemonList.length" class="list-group-item" style="text-align: center">
+                        Não existem Pokemon cadastrados!
+                    </li>
+                    <li ng-show="pokemonList.length" ng-repeat="data in pokemonList" class="list-group-item">
+                        <button type="button" ng-click="onDelete(data.id)" class="btn btn-danger">X</button>
+                        <button type="button" ng-click="onUpdate(data)" class="btn btn-primary">Edit</button>
+
+                        <img ng-src="/public/images/{{data.tipo}}-FACE.png" style="width: 10%; margin-right: 5%">
+                        {{data.treinador}}
+
+                        <span class="pull-right">
+                            <button type="button" ng-show="pokemonSelected.id != data.id" ng-click="onBattle(data.id)" class="btn btn-warning">Batalhar</button>
+                            <button type="button" ng-click="onChoosePokemon(data)" class="btn btn-primary">Usar</button>
+                        </span>
+
+                        <span class="pull-right" style="line-height: 35px;margin-right: 15px;">Nv. {{data.nivel}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div ng-show="registry" class="col-sm-5 registry-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="trainerName">Nome do treinador</label>
+                        <input type="hidden" ng-model="params.id">
+                        <input ng-model="params.trainer" type="text" class="form-control" id="trainerName" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>
+                                    <input type='radio' ng-model="params.type" value="CHARIZARD" name="pokemon"/>
+                                    <img src="/public/images/CHARIZARD-3D.png" style="width: 90%">
+                                </label>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>
+                                    <input type='radio' ng-model="params.type" value="MEWTWO" name="pokemon"/>
+                                    <img src="/public/images/MEWTWO-3D.png" style="width: 50%; margin-top: 10%;">
+                                </label>
+                            </div>
+
+                            <div class="col-md-4" style="margin-top: 11%;">
+                                <label>
+                                    <input type='radio' ng-model="params.type" value="PIKACHU" name="pokemon"/>
+                                    <img src="/public/images/PIKACHU-3D.png" style="width: 30%; ">
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 pull-right">
+                    <button type="button" ng-click="onRegistry(params)" class="btn btn-success pull-right">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="!registry && pokemonSelected" class="col-sm-5 registry-container">
+            <div class="row">
+                <div class="col-md-7">
+                    <ul style="list-style: none">
+                        <li class="text-status">Nome : {{pokemonSelected.treinador}}</li>
+                        <li class="text-status">Tipo : {{pokemonSelected.tipo}}</li>
+                        <li class="text-status">Nivel : {{pokemonSelected.nivel}}</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5">
+                    <img ng-src="/public/images/{{pokemonSelected.tipo}}-3D.png" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-show="battleStatus">
+        <div class="col-md-5">
+
+            <div class="row">
+                <div class="col-md-7">
+                    <ul style="list-style: none">
+                        <li class="text-status">Nome : {{battleStatus.winner.treinador}}</li>
+                        <li class="text-status">Tipo : {{battleStatus.winner.tipo}}</li>
+                        <li class="text-status">Nivel : {{battleStatus.winner.nivel}}
+                            <span class="btn btn-success">/\</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5">
+                    <img ng-src="/public/images/{{battleStatus.winner.tipo}}-3D.png" style="width: 100%;">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-2" style="text-align: center">
+            <label style="font-size: 90px">
+                VS
+            </label>
+        </div>
+
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-7">
+                    <ul style="list-style: none">
+                        <li class="text-status">Nome : {{battleStatus.loser.treinador}}</li>
+                        <li class="text-status">Tipo : {{battleStatus.loser.tipo}}</li>
+                        <li class="text-status">Nivel : {{battleStatus.loser.nivel}}
+                            <span ng-show="battleStatus.loser.nivel == 0" class="btn btn-danger">Estás muerto!</span>
+                            <span ng-show="battleStatus.loser.nivel != 0" class="btn btn-danger">\/</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5">
+                    <img ng-src="/public/images/{{battleStatus.loser.tipo}}-3D.png" style="width: 100%;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+
+        label input[type=radio] {
+            display: none;
+        }
+
+        label input[type=radio] + img
+        {
+            background: transparent;
+            display:inline-block;
+        }
+
+        label input[type=radio]:checked + img
+        {
+            display: inline-block;
+            border-radius: 100%;
+            box-shadow: inset 0px 3px 5px 6px #ccc;
+
+        }
+
+        .registry-container {
+            padding-top: 20px;
+            padding-right: 5%;
+        }
+        .text-status {
+            padding: 2%;
+            font-size: 20px;
+        }
+    </style>
 </section>

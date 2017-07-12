@@ -23,7 +23,12 @@ class PokemonUpdateCommand {
             orm = require("../../dao/model");
             PokemonModel = orm.model('gabriel');
             params.id = req.body.id;
-            params.properties =  req.body.properties;
+
+            if (typeof req.body.properties === 'string') {
+                params.properties = JSON.parse(req.body.properties);
+            }else {
+                params.properties = req.body.properties;
+            }
 
             if (!params.id) {
                 throw new Error("O ID é obrigatório para a atualização.");
@@ -31,7 +36,7 @@ class PokemonUpdateCommand {
 
             promise = PokemonModel.update(
                 {
-                    treinador : params.properties.trainer
+                    treinador : params.properties['trainer']
                 },
                 {
                     where : {

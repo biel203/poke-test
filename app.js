@@ -13,6 +13,7 @@ var port = process.env.PORT || '3000';
 
 // view engine setup
 app.use('/lib', express.static(path.resolve(__dirname, 'node_modules')));
+app.use('/lib-bower', express.static(path.resolve(__dirname, 'bower_components')));
 app.use('/public', express.static(path.resolve(__dirname, 'public')));
 app.use('/', express.static(path.resolve(__dirname, 'client')));
 app.use('/server', express.static(path.resolve(__dirname, 'server')));

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
 <head>
     <meta charset="UTF-8">
     <title>Skeleton</title>
-</head>
-<body ng-app="app">
 
-<div ng-view=""></div>
+    <link rel="stylesheet" href="/lib-bower/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/lib-bower/toastr/toastr.min.css" />
+
+</head>
+<body ng-app="app" style="height: 100%">
+
+<div ng-view="" class="container-fluid"></div>
 
 
 </body>
@@ -14,6 +18,9 @@
 <script src="/lib/angular/angular.js"></script>
 <script src="/lib/angular-route/angular-route.js"></script>
 <script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib-bower/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/lib-bower/toastr/toastr.min.js"></script>
+
 
 <script src="app.js"></script>
 

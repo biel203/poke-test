@@ -1,4 +1,4 @@
-describe('Delete', function () {
+describe('Battle', function () {
 
     before(function () {
         var server = require('../../../../app');

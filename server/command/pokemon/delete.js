@@ -37,7 +37,7 @@ class PokemonDeleteCommand {
             promise.then(onDelete.bind(this), onError);
 
         } catch (err) {
-            res.send(new Error(err.message));
+            res.json(new Error(err.message));
         }
 
         /**
@@ -47,7 +47,7 @@ class PokemonDeleteCommand {
          * @ignore
          */
         function onDelete(result) {
-            res.send(result);
+            res.json(result);
         }
 
         /**

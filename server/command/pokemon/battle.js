@@ -28,6 +28,10 @@ class PokemonBattleCommand {
                 throw new Error("Não existem pokémon suficientes para uma batalha.");
             }
 
+            if (req.params.idA == req.params.idB) {
+                throw new Error("O pokemon não pode batalhar com ele mesmo.");
+            }
+
             promise = PokemonModel.findAll(
                 {
                     id : [req.params.idA, req.params.idB]

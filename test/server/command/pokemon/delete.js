@@ -66,7 +66,7 @@ describe('Delete', function () {
 
             request.body.id = '';
 
-            response.send = function (result) {
+            response.json = function (result) {
                 chai.expect(result).to.be.an.instanceof(Error);
                 chai.expect(result).to.have.property('message');
                 chai.expect(result.message).to.be.a('string');
