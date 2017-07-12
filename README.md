@@ -4,6 +4,16 @@ Crud básico em Node.js de pokémon.
 Foi-se pensado em fazer desse CRUD uma api, portanto, caso queira usar outra forma de comunicação REST, poderá
 acessar as URLs citadas aqui.
 
+## URL para acesso direto
+
+Foi feito um client para que possa ver as funcionalidades da API. tanto o client como a própria API foram
+hospedadas no Heroku, acesse a url abaixo para visualizar.
+```
+poke-teste.herokuapp.com
+```
+
+## Documentação
+
 Para acessar a documentação acesse : [HOST]/doc
 
 Exemplo:

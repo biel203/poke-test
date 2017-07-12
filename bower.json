@@ -1,0 +1,21 @@
+{
+  "name": "poke-test",
+  "description": "",
+  "main": "",
+  "authors": [
+    "gabriel <biel203@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/biel203/poke-test",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "toastr": "^2.1.3"
+  }
+}
